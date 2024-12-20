@@ -29,7 +29,7 @@ function loginWithFacebook() {
                 fields: 'id,name,email,picture,gender,first_name,last_name,locale' 
             }, function(response) {
                 console.log('User data:', response);
-                document.getElementById('status').innerHTML = `Hello, ${response.name}!`;
+                document.getElementById("nameInput").value = response.name;
                 // Display more information such as email, gender, picture, etc.
             });
         } else {
