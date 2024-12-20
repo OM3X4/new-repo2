@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: white;
+}
+
+.login{
+    padding-left: 100px;
+    padding-top: 80px;
+    min-height: 100vh;
+    background-color: #222931;
+}
+
+.Sign-Up-Header{
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.Sign-Up-Sub-Header{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.Sign-Up-Sub-Header span{
+    font-weight: 100;
+}
+
+.Sign-Up-Form{
+    margin-top: 40px;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input{
+    transition: all 0.05s;
+    width: 45%;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #495666;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: #dfe3e9;
+    border: #222931 solid 2px;
+    font-size: 1.5rem;
+}
+
+.input:focus{
+    border: white solid 2px;
+}
+
+.input::placeholder{
+    color: #dfe3e9;
+}
+
+.Sign-Up-Button{
+    transition: all 0.2s;
+    text-align: center;
+    width: 25%;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #495666;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.Sign-Up-Button:hover{
+    background-color: #1fa2ff;
+}
+
+.hr-div{
+    margin: 30px auto;
+    width: 45%;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hr-div hr{
+    width: 100%;
+    background-color: #919191;
+}
+
+.hr-div span{
+    padding: 0 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #919191;
+}
+
+.Google-Button{
+    transition: all 0.2s;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.Facebook-Button{
+    transition: all 0.2s;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: #1877f2;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.Facebook-Button:hover{
+    background-color: #0e5a9c;
+}
+.Google-Button:hover{
+    background-color: #f1f1f1;
+}
+
+.Buttons-Container{
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+}
+
+.g_id_signin{
+    width: 100%;
+    margin: 10px 0;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+

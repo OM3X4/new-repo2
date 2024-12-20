@@ -1,0 +1,2 @@
+app secret : ec3b7776043bbb16fea631a2e2cb72dd
+app id : 468825406321179

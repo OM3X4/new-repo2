@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="51079260520-4hoibkqfam0ihpa1e8invmfmuuae7uf0.apps.googleusercontent.com">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : 'YOUR_APP_ID', // Replace with your App ID
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v12.0'
+          });
+      
+          FB.AppEvents.logPageView();   
+        };
+      
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) return;
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+    </script>
+      
+
+
+
+
+
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div id="g_id_onload"
+        data-client_id="51079260520-4hoibkqfam0ihpa1e8invmfmuuae7uf0" data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+
+
+
+    <script src="Main.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+
+
+</head>
+<body class="login">
+    <div>
+        <h1 class="Sign-Up-Header">Sign Up</h1>
+        <h1 class="Sign-Up-Sub-Header">Already Have An Account? <span>Login</span></h1>
+    </div>
+    <div>
+        <div class="Sign-Up-Form">
+            <input type="text" class="input" placeholder="Name">
+            <input type="text" class="input" placeholder="Phone Number">
+            <input type="text" class="input" placeholder="Password">
+            <input type="text" class="input" placeholder="Confirm Password">
+            <div class="Sign-Up-Button">Sign Up</div>
+        </div>
+        <div class="hr-div">
+            <hr />
+            <span>Or</span>
+            <hr />
+        </div>
+        <div class="Buttons-Container">
+            <div class="Google-Button" id="custom-google-button">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+                </svg>
+            </div>
+            <div class="Facebook-Button">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256">
+                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M32,11h5c0.552,0 1,-0.448 1,-1v-6.737c0,-0.524 -0.403,-0.96 -0.925,-0.997c-1.591,-0.113 -4.699,-0.266 -6.934,-0.266c-6.141,0 -10.141,3.68 -10.141,10.368v6.632h-7c-0.552,0 -1,0.448 -1,1v7c0,0.552 0.448,1 1,1h7v19c0,0.552 0.448,1 1,1h7c0.552,0 1,-0.448 1,-1v-19h7.222c0.51,0 0.938,-0.383 0.994,-0.89l0.778,-7c0.066,-0.592 -0.398,-1.11 -0.994,-1.11h-8v-5c0,-1.657 1.343,-3 3,-3z"></path></g></g>
+                </svg>
+            </div>
+            <div></div>
+        </div>
+    </div>
+<!-- 
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div id="g_id_onload"
+        data-client_id="51079260520-4hoibkqfam0ihpa1e8invmfmuuae7uf0" data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div> -->
+
+
+
+
+
+    <script>
+        window.onload = function() {
+          // Initialize Google Identity Services
+          google.accounts.id.initialize({
+              client_id: "51079260520-4hoibkqfam0ihpa1e8invmfmuuae7uf0",
+              callback: handleCredentialResponse
+          });
+      
+          // Attach event listener to custom button
+          const customButton = document.getElementById("custom-google-button");
+          customButton.addEventListener("click", () => {
+              google.accounts.id.prompt();  // Show One Tap UI or consent screen
+          });
+        }
+      
+        // Callback function for handling the response
+        function handleCredentialResponse(response) {
+          console.log("Google sign-in response:", response);
+          // Handle the response (e.g., send it to your server for verification)
+        }
+      </script>
+    <script src="Main.js"></script>
+    
+</body>
+</html>
