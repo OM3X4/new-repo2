@@ -8,7 +8,7 @@
 
 .login{
     padding-left: 100px;
-    padding-top: 80px;
+    padding-top: 30px;
     min-height: 100vh;
     background-color: #222931;
 }
@@ -77,7 +77,8 @@
 }
 
 .hr-div{
-    margin: 30px auto;
+    margin: 0 auto;
+    margin-top: 30px;
     width: 45%;
     display : flex;
     justify-content: center;
@@ -96,30 +97,20 @@
     color: #919191;
 }
 
-.Google-Button{
-    transition: all 0.2s;
-    text-align: center;
-    width: 100%;
-    padding: 20px;
-    margin: 10px 0;
-    background-color: white;
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
+
 
 .Facebook-Button{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
     transition: all 0.2s;
     text-align: center;
-    width: 100%;
-    padding: 20px;
     margin: 10px 0;
     background-color: #1877f2;
     border: none;
     outline: none;
-    border-radius: 20px;
+    border-radius: 99999px;
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
@@ -128,8 +119,9 @@
 .Facebook-Button:hover{
     background-color: #0e5a9c;
 }
-.Google-Button:hover{
-    background-color: #f1f1f1;
+
+.Google-Button{
+    background-color: #222931;
 }
 
 .Buttons-Container{
@@ -141,15 +133,6 @@
     width: 45%;
 }
 
-.g_id_signin{
-    width: 100%;
-    margin: 10px 0;
-    background-color: white;
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
+
 
 

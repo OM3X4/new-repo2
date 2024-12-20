@@ -32,7 +32,6 @@
     <h2>Facebook Login Example</h2>
     <button onclick="loginWithFacebook()">Login with Facebook</button>
 
-    <div id="status"></div>
 
     <script>
         // Function to handle login
@@ -45,7 +44,6 @@
                         fields: 'id,name,email,picture,gender,first_name,last_name,locale' 
                     }, function(response) {
                         console.log('User data:', response);
-                        document.getElementById('status').innerHTML = `Hello, ${response.name}!`;
                         // Display more information such as email, gender, picture, etc.
                     });
                 } else {
