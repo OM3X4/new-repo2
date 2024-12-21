@@ -21,60 +21,45 @@ signInButton.addEventListener("click", async () => {
     const verificationUri = deviceCodeData.verification_uri;
     const deviceCode = deviceCodeData.device_code;
 
-    // Step 2: Display instructions to the user
-    instructionsDiv.innerHTML = `
-      <p>To sign in, visit: <a href="${verificationUri}" target="_blank">${verificationUri}</a></p>
-      <p>Enter the code: <strong>${userCode}</strong></p>
-    `;
+    // Display instructions to the user
+    instructionsDiv.innerHTML = `Please go to <a href="${verificationUri}" target="_blank">${verificationUri}</a> and enter the code: ${userCode}`;
 
-    // Step 3: Poll GitHub to check if the user authorized the app
-    const pollInterval = deviceCodeData.interval * 1000;
+    // Step 2: Poll for the access token
+    let accessToken;
+    while (!accessToken) {
+      await new Promise(resolve => setTimeout(resolve, deviceCodeData.interval * 1000));
 
-    const pollForAccessToken = async () => {
-      while (true) {
-        await new Promise((resolve) => setTimeout(resolve, pollInterval));
+      const tokenResponse = await fetch("https://github.com/login/oauth/access_token", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          client_id: clientID,
+          device_code: deviceCode,
+          grant_type: "urn:ietf:params:oauth:grant-type:device_code",
+        }),
+      });
 
-        const tokenResponse = await fetch("https://github.com/login/oauth/access_token", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({
-            client_id: clientID,
-            device_code: deviceCode,
-            grant_type: "urn:ietf:params:oauth:grant-type:device_code",
-          }),
-        });
+      const tokenData = await tokenResponse.json();
 
-        const tokenData = await tokenResponse.json();
-
-        if (tokenData.access_token) {
-          // Step 4: Fetch user data
-          const userResponse = await fetch("https://api.github.com/user", {
-            headers: {
-              Authorization: `Bearer ${tokenData.access_token}`,
-            },
-          });
-
-          const user = await userResponse.json();
-
-          // Display user info
-          userInfoDiv.innerHTML = `
-            <h1>Welcome, ${user.name}!</h1>
-            <p>Username: ${user.login}</p>
-            <img src="${user.avatar_url}" alt="GitHub Avatar" width="100">
-          `;
-          break;
-        } else if (tokenData.error === "authorization_pending") {
-          // Continue polling
-          console.log("Waiting for user authorization...");
-        } else {
-          console.error("Error during token polling:", tokenData.error);
-          break;
-        }
+      if (tokenData.access_token) {
+        accessToken = tokenData.access_token;
+      } else if (tokenData.error && tokenData.error !== "authorization_pending") {
+        throw new Error(tokenData.error);
       }
-    };
+    }
 
-    pollForAccessToken();
+    // Step 3: Use the access token to get user info
+    const userResponse = await fetch("https://api.github.com/user", {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
+
+    const userData = await userResponse.json();
+
+    // Display user info
+    userInfoDiv.innerHTML = `Hello, ${userData.login}!`;
+
   } catch (error) {
-    console.error("Error during sign-in process:", error);
+    console.error("Error during GitHub sign-in:", error);
+    instructionsDiv.innerHTML = "An error occurred during sign-in. Please try again.";
   }
 });
