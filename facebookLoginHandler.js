@@ -1,23 +1,23 @@
-        // Initialize the Facebook SDK
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '468825406321179', // Replace with your App ID from Facebook Developer Console
-                cookie     : true,  // Enable cookies to allow the server to access the session
-                xfbml      : true,  // Parse social plugins on this page
-                version    : 'v12.0' // Use the latest version of the Graph API
-            });
+// Initialize the Facebook SDK
+window.fbAsyncInit = function() {
+    FB.init({
+        appId      : '468825406321179', // Replace with your App ID from Facebook Developer Console
+        cookie     : true,  // Enable cookies to allow the server to access the session
+        xfbml      : true,  // Parse social plugins on this page
+        version    : 'v12.0' // Use the latest version of the Graph API
+    });
 
-            FB.AppEvents.logPageView(); // Log page view for analytics
-        };
+    FB.AppEvents.logPageView(); // Log page view for analytics
+};
 
-        // Asynchronously load the SDK
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+// Asynchronously load the SDK
+(function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 
 
 function loginWithFacebook() {

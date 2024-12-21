@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    color: white;
 }
 
 .login{
@@ -110,10 +109,10 @@
     background-color: #1877f2;
     border: none;
     outline: none;
-    border-radius: 99999px;
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
+    border-radius: 2px;
 }
 
 .Facebook-Button:hover{

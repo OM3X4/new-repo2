@@ -26,13 +26,13 @@ window.onload = function() {
     google.accounts.id.renderButton(
         document.getElementById("custom-google-button"), 
         {
-            type: "icon",  // Use standard instead of icon for full-width
-            theme: "filled_black", // Apply the filled_blue theme
+            type: "standard",  // Use standard instead of icon for full-width
+            theme: "outline", // Apply the filled_blue theme
             size: "large", // Use the large size
-            width: 1000 , 
+            // width: 1000 , 
             logo_alignment: "left", // Align the logo to the left
             text: "", // Show "Continue with Google"
-            shape: "pill" // Use rectangular shape to match your design
+            shape: "rectangular" // Use rectangular shape to match your design
         }
     );
 };
