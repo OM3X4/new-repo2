@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <!-- Single instance of Google client library -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
 
@@ -55,42 +54,5 @@
     <script src="facebookLoginHandler.js"></script>
     <script src="googleLoginHandler.js"></script>
 
-    <button id="signIn">Sign in with GitHub</button>
-    <div id="instructions"></div>
-    <div id="userInfo"></div>
-
-    <script src="githubloginhander.js"></script>
-
-    <!-- <script>
-        function handleCredentialResponse(response) {
-            console.log("Encoded JWT ID token: " + response.credential);
-            // Here you can handle the response, send it to your server, etc.
-            // The response.credential contains the ID token
-        }
-
-        window.onload = function() {
-            // Initialize Google Identity Services
-            google.accounts.id.initialize({
-                client_id: "51079260520-4hoibkqfam0ihpa1e8invmfmuuae7uf0",
-                callback: handleCredentialResponse,
-                auto_select: false, // Don't auto select the account
-                cancel_on_tap_outside: true // Allow clicking outside to cancel
-            });
-
-            // Render the button within your custom button container
-            google.accounts.id.renderButton(
-                document.getElementById("custom-google-button"), 
-                {
-                    type: "icon",  // Use standard instead of icon for full-width
-                    theme: "filled_black", // Apply the filled_blue theme
-                    size: "large", // Use the large size
-                    width: 1000 , 
-                    logo_alignment: "left", // Align the logo to the left
-                    text: "", // Show "Continue with Google"
-                    shape: "pill" // Use rectangular shape to match your design
-                }
-            );
-        };
-    </script> -->
 </body>
 </html>
